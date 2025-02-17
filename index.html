@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Word Counter</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✨  Word Counter ✨</h1>
+            <p class="description">Type or paste your text below to count words, characters, and more!</p>
+        </header>
+        
+        <div class="input-area">
+            <textarea id="text-input" placeholder="Start typing or paste your text here..."></textarea>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-box">
+                <div id="word-count" class="stat-value">0</div>
+                <div class="stat-label">Words</div>
+            </div>
+            
+            <div class="stat-box">
+                <div id="char-count" class="stat-value">0</div>
+                <div class="stat-label">Characters</div>
+            </div>
+            
+            <div class="stat-box">
+                <div id="char-no-spaces" class="stat-value">0</div>
+                <div class="stat-label">Characters (no spaces)</div>
+            </div>
+            
+            <div class="stat-box">
+                <div id="sentence-count" class="stat-value">0</div>
+                <div class="stat-label">Sentences</div>
+            </div>
+            
+            <div class="stat-box">
+                <div id="paragraph-count" class="stat-value">0</div>
+                <div class="stat-label">Paragraphs</div>
+            </div>
+            
+            <div class="stat-box">
+                <div id="reading-time" class="stat-value">0</div>
+                <div class="stat-label">Reading Time (sec)</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>CJAY 💜</p>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
