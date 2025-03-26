@@ -1,116 +1,233 @@
+/* Base styles and variables */
 :root {
-    --pastel-yellow: #fff176; /* Brighter pastel yellow */
-    --pastel-beige: #f5e9d9;
-    --pastel-purple: #d9c6e0;
-    --pastel-pink: #ffd6e5;
+  --primary-color: #6c5ce7;
+  --primary-light: #a29bfe;
+  --secondary-color: #fd79a8;
+  --text-color: #2d3436;
+  --light-gray: #dfe6e9;
+  --bg-color: #f9f9f9;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: var(--pastel-beige);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
 .container {
-    width: 100%;
-    max-width: 700px;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-    overflow: hidden;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
 }
 
+/* Header styles */
 header {
-    background-color: var(--pastel-purple);
-    padding: 25px;
-    text-align: center;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 h1 {
-    color: #333;
-    margin-bottom: 10px;
-    font-size: 28px;
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .description {
-    color: #555;
-    font-size: 14px;
-    margin-bottom: 5px;
+  color: #666;
+  font-size: 1.1rem;
 }
 
+/* Input controls */
+.input-controls {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+button:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+button i {
+  font-size: 1rem;
+}
+
+/* Input area */
 .input-area {
-    padding: 25px;
-    background-color: var(--pastel-yellow);
+  margin-bottom: 1.5rem;
+  position: relative;
 }
 
 textarea {
-    width: 100%;
-    min-height: 200px;
-    padding: 15px;
-    border: 2px solid var(--pastel-pink);
-    border-radius: 10px;
-    font-size: 16px;
-    resize: vertical;
-    transition: border-color 0.3s;
+  width: 100%;
+  min-height: 200px;
+  padding: 1rem;
+  border: 2px solid var(--light-gray);
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+  transition: var(--transition);
 }
 
 textarea:focus {
-    outline: none;
-    border-color: var(--pastel-purple);
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.2);
 }
 
+.char-limit {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1rem;
+  font-size: 0.85rem;
+  color: #666;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Stats section */
 .stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 15px;
-    padding: 25px;
-    background-color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .stat-box {
-    background-color: var(--pastel-pink);
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    transition: transform 0.3s;
+  background-color: white;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .stat-box:hover {
-    transform: translateY(-5px);
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow);
 }
 
 .stat-value {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 5px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 0.3rem;
 }
 
 .stat-label {
-    font-size: 14px;
-    color: #555;
+  font-size: 0.85rem;
+  color: #666;
 }
 
+/* Advanced stats */
+.advanced-stats {
+  background-color: rgba(108, 92, 231, 0.05);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.advanced-stats h2 {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.advanced-stat-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.advanced-stat {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Footer */
 .footer {
-    padding: 15px;
-    text-align: center;
-    background-color: var(--pastel-purple);
-    color: #333;
-    font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #888;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--light-gray);
+  padding-top: 1rem;
 }
 
+/* Responsive adjustments */
 @media (max-width: 600px) {
-    .stats {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .input-controls {
+    justify-content: center;
+  }
+}
+
+/* Character limit states */
+.char-limit.warning {
+  color: orange;
+}
+
+.char-limit.danger {
+  color: red;
+  font-weight: bold;
+}
+
+/* Animation for copy success */
+@keyframes flash {
+  0% { background-color: var(--primary-color); }
+  50% { background-color: #2ecc71; }
+  100% { background-color: var(--primary-color); }
+}
+
+.copy-success {
+  animation: flash 0.5s;
 }
